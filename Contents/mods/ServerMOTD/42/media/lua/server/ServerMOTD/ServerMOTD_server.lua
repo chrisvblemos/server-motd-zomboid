@@ -53,12 +53,9 @@ end
 local function getMotd()
 	local config = ServerMOTD.Config or {}
 	local text = loadMessageOverride()
-	local source = "ServerMOTD.txt"
 	if not text then
 		text = readOption("Message", config.text or FALLBACK_TEXT)
-		source = "sandbox/config"
 	end
-	ServerMOTD.log("MOTD message source: " .. source)
 	return {
 		title = readOption("Title", config.title or FALLBACK_TITLE),
 		text = text,
@@ -66,19 +63,14 @@ local function getMotd()
 end
 
 local function onClientCommand(module, command, player, args)
-	ServerMOTD.log("OnClientCommand " .. tostring(module) .. "/" .. tostring(command) .. " player=" .. tostring(player))
 	if module ~= MODULE or command ~= "request" then
 		return
 	end
 	if not isEnabled() then
-		ServerMOTD.log("MOTD disabled, not sending")
 		return
 	end
 	local motd = getMotd()
-	ServerMOTD.log("sending MOTD to " .. tostring(player and player:getUsername()))
 	sendServerCommand(player, MODULE, "show", { title = motd.title, text = motd.text })
 end
 
 Events.OnClientCommand.Add(onClientCommand)
-
-ServerMOTD.log("server file loaded")

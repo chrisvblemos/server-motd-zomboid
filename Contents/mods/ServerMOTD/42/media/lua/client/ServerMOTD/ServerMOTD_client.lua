@@ -171,7 +171,6 @@ local function pumpShow()
 		return
 	end
 	Events.OnPlayerUpdate.Remove(pumpShow)
-	ServerMOTD.log("showing MOTD")
 	ServerMOTD.show(pendingTitle, pendingText, pendingUsername)
 end
 
@@ -186,7 +185,6 @@ local function onServerCommand(module, command, args)
 	pendingTitle = args.title or "Server Message"
 	pendingText = args.text or ""
 	pendingUsername = player and player:getUsername() or nil
-	ServerMOTD.log("received MOTD, delaying display")
 	SHOW_DELAY_TICKS = 2
 	Events.OnPlayerUpdate.Add(pumpShow)
 end
@@ -199,15 +197,12 @@ local function sendRequest()
 	Events.OnPlayerUpdate.Remove(sendRequest)
 	local player = getPlayer()
 	if not player then
-		ServerMOTD.log("sendRequest: no player")
 		return
 	end
 	local username = player:getUsername()
-	ServerMOTD.log("sendRequest username=" .. tostring(username) .. " ignored=" .. tostring(ServerMOTD.isIgnored(username)))
 	if ServerMOTD.isIgnored(username) then
 		return
 	end
-	ServerMOTD.log("sending client command request")
 	sendClientCommand(MODULE, "request", {})
 end
 
@@ -219,12 +214,9 @@ local function requestMotd(playerIndex)
 		return
 	end
 	ServerMOTD.requested = true
-	ServerMOTD.log("OnCreatePlayer index=" .. tostring(playerIndex) .. ", delaying request")
 	MOTD_DELAY_TICKS = 3
 	Events.OnPlayerUpdate.Add(sendRequest)
 end
 
 Events.OnServerCommand.Add(onServerCommand)
 Events.OnCreatePlayer.Add(requestMotd)
-
-ServerMOTD.log("client file loaded")
