@@ -1,8 +1,9 @@
 version=1
+id=3799663144
 title=Server MOTD
 description=Shows a Message of the Day window when a player joins the server.
 description=
 description=The server owner configures the title and body text from the in-game Sandbox Settings (Server MOTD page). Rich formatting such as <LINE>, <CENTRE> and <RGB:r,g,b> is supported.
 description=Players can tick "Don't show this again" to hide the message for their username. The preference is stored per account and can be cleared by deleting Lua/ServerMOTD_ignored.ini.
 tags=Build 42
-visibility=public
+visibility=unlisted
