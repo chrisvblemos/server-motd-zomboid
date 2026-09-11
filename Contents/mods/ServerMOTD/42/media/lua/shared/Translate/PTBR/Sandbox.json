@@ -1,0 +1,12 @@
+{
+    "Sandbox_ServerMOTD": "Avisos do Servidor (MOTD)",
+
+    "Sandbox_ServerMOTD_Enabled": "Ativar MOTD",
+    "Sandbox_ServerMOTD_Enabled_tooltip": "Se ativado, a janela de avisos do servidor é exibida quando um jogador entra.",
+
+    "Sandbox_ServerMOTD_Title": "Título do MOTD",
+    "Sandbox_ServerMOTD_Title_tooltip": "O título exibido no topo da janela de avisos.",
+
+    "Sandbox_ServerMOTD_Message": "Mensagem do MOTD",
+    "Sandbox_ServerMOTD_Message_tooltip": "O corpo da mensagem. Separe as linhas com a tag LINE escrita entre sinais de menor e maior. Tags de layout e cor do texto rico também são suportadas."
+}

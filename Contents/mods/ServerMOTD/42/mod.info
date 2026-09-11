@@ -1,0 +1,4 @@
+name=Server MOTD
+id=ServerMOTD
+description=Shows a Message of the Day window when a player joins the server. Server owners set the title and body text from the in-game Sandbox Settings (Server MOTD page); players can tick "Don't show this again" to hide it for their username.
+poster=poster.png

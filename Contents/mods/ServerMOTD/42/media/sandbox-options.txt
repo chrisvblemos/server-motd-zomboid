@@ -1,0 +1,25 @@
+VERSION = 1,
+
+option ServerMOTD.Enabled
+{
+    type = boolean,
+    default = true,
+    page = ServerMOTD,
+    translation = ServerMOTD_Enabled,
+}
+
+option ServerMOTD.Title
+{
+    type = string,
+    default = Welcome to the Server,
+    page = ServerMOTD,
+    translation = ServerMOTD_Title,
+}
+
+option ServerMOTD.Message
+{
+    type = string,
+    default = <CENTRE> <SIZE:medium> Welcome to our server! <LINE> <LINE> <LEFT> <SIZE:small> Please take a moment to read the rules. <LINE> <LINE> 1. Be respectful to other survivors. <LINE> 2. No cheating - exploiting or duping. <LINE> 3. No griefing or destroying other player builds. <LINE> 4. Roleplay where possible and keep chat friendly. <LINE> 5. Have fun! <LINE> <LINE> Breaking the rules may result in a ban.,
+    page = ServerMOTD,
+    translation = ServerMOTD_Message,
+}

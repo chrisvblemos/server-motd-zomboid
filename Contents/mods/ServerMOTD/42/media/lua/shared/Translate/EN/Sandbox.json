@@ -1,0 +1,12 @@
+{
+    "Sandbox_ServerMOTD": "Server MOTD",
+
+    "Sandbox_ServerMOTD_Enabled": "Enable MOTD",
+    "Sandbox_ServerMOTD_Enabled_tooltip": "If enabled, the Message of the Day window is shown to players when they join the server.",
+
+    "Sandbox_ServerMOTD_Title": "MOTD Title",
+    "Sandbox_ServerMOTD_Title_tooltip": "The title displayed at the top of the MOTD window.",
+
+    "Sandbox_ServerMOTD_Message": "MOTD Message",
+    "Sandbox_ServerMOTD_Message_tooltip": "The body of the MOTD. Separate lines with the LINE tag written as an angle-bracket tag (for example: Welcome LINE Please read the rules). Rich text layout and colour tags are also supported."
+}
